@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="easy_search_group" model="res.groups">
+            <field name="name">Easy Search Admin</field>
+        </record>
+
+
+    </data>
+</odoo>

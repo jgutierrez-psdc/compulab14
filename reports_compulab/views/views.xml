@@ -1,0 +1,83 @@
+<odoo>
+  <data>
+    <record id="reports_compulab.custom_form_compulab" model="ir.ui.view">
+      <field name="name">reports.compulab.custom.form</field>
+      <field name="model">sale.order</field>
+      <field name='inherit_id' ref='sale.view_order_form'/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='payment_term_id']" position="after">
+          <field name="time_shiping"/>
+          <field name="tecnico"/>
+          <field name="asesor1"/>
+          <field name="asesor2"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="reports_compulab.custom_form_invoice" model="ir.ui.view">
+      <field name="name">reports.compulab.custom.form.invoice</field>
+      <field name="model">account.move</field>
+      <field name='inherit_id' ref='account.view_move_form'/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='ref']" position="after">
+          <field name="sale_id"/>
+        </xpath>
+      </field>
+    </record>
+    
+    <template id="reports_compulab.custom_external_compulab" inherit_id="web.external_layout_clean">
+        <xpath expr="//t[@t-name='web.external_layout_clean']" position="replace">
+          <t t-name="web.external_layout_clean">
+              <div class="header">
+                  <div class="o_clean_header_2">
+                  <div class="row">
+                      <div class="col-6">
+                          <img t-if="company.logo" style="max-height: 90px;" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+
+              <div class="article o_report_layout_clean_2" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                  <t t-call="web.address_layout"/>
+                  <t t-raw="0"/>
+              </div>
+
+              <div class="footer o_clean_footer_2">
+                  <div class="text-center" style="font-size: 15px;">
+                      <ul class="list-inline">
+                          <li t-if="company.street" class="list-inline-item"><span t-field="company.street"/> <span t-field="company.street2"/></li>
+                          <li t-if="company.phone" class="list-inline-item">Tel: <span t-field="company.phone"/></li>
+                          <li t-if="company.website" class="list-inline-item"><span t-field="company.website"/></li>
+                          <li t-if="company.email" class="list-inline-item"><span t-field="company.email"/></li>
+                          <li t-if="company.vat" class="list-inline-item"><t t-esc="(company.country_id.vat_label or 'Tax ID').replace(' ','\N{NO-BREAK SPACE}')"/>: <span t-esc="company.vat.replace(' ','\N{NO-BREAK SPACE}')"/></li>
+                      </ul>
+
+                      <div name="financial_infos">
+                          <span t-field="company.report_footer"/>
+                      </div>
+
+                      <div t-if="report_type == 'pdf'" class="text-muted">
+                          Page: <span class="page"/> / <span class="topage"/>
+                      </div>
+                  </div>
+              </div>
+          </t>
+          <link rel="stylesheet" href="/reports_compulab/static/src/css/customlab.css"/>
+        </xpath>
+    </template>
+
+    <template id="assets_backend" name="reports_compulab assets" inherit_id="web.report_assets_common">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/reports_compulab/static/src/css/customlab.css"/>
+        </xpath>
+    </template>
+
+    <template id="reports_compulab.custom_reportdocument_compulab" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//p[@t-field='doc.note']" position="after">
+            Tiempo de entrega: <p t-field="doc.time_shiping"/>
+        </xpath>
+    </template>
+
+  </data>
+</odoo>
