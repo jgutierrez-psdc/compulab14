@@ -65,6 +65,6 @@ class EasySearchConfig(models.Model):
     def onchange_model_id(self):
         return {
             'domain': {
-                'field_ids': [('id', 'in', self.model_id.field_id.ids)]
+                'field_ids': [('id', 'in', self.model_id.field_ids.ids)]
             }
         }
