@@ -10,9 +10,9 @@
                 <field name="image_small" widget="image"/>
             </xpath>
             <xpath expr="//field[@name='order_line']/tree//field[@name='product_id']" position="before">
-                <field name="image_small" widget="image" height="50"/>
+                <field name="image_small" widget="image" height="40"/>
             </xpath>
-            <field name="payment_term_id" position="before">
+            <field name="client_order_ref" position="before">
                 <field name="print_image"/>
                 <field name="image_sizes" attrs="{'required': [('print_image', '!=', False)]}"/>
             </field>
