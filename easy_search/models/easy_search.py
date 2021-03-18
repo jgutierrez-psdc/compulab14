@@ -48,8 +48,7 @@ class EasySearchConfig(models.Model):
     _rec_name = 'model_id'
     _description = 'Easy Search Config'
 
-
-    model_id = fields.Many2one(string="Model Name", required=True, )
+    model_id = fields.Many2one(comodel_name="ir.model", string="Model Name", required=True, ondelete="set null")
     field_ids = fields.Many2many(comodel_name="ir.model.fields", string="Fields To Used In Search", required=True)
     type = fields.Selection(string="Type",
                             selection=[
@@ -65,6 +64,6 @@ class EasySearchConfig(models.Model):
     def onchange_model_id(self):
         return {
             'domain': {
-                'field_ids': [('id', 'in', self.model_id.field_ids.ids)]
+                'field_ids': [('id', 'in', self.model_id.field_id.ids)]
             }
         }
