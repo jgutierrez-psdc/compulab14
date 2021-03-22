@@ -4,7 +4,7 @@ from odoo import fields, models
 
 
 class SaleOrder(models.Model):
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     print_image = fields.Boolean(
         'Con Imagenes', help="""If ticked, you can see the product image in
@@ -17,7 +17,6 @@ class SaleOrder(models.Model):
 
 
 class SaleOrderLine(models.Model):
-    _inherit = 'sale.order.line'
+    _inherit = "sale.order.line"
 
-    image_small = fields.Binary(
-        'Imagen', related='product_id.image_1920')
+    image_small = fields.Binary("Product Image", related="product_id.image_1920")

@@ -48,7 +48,7 @@ class EasySearchConfig(models.Model):
     _rec_name = 'model_id'
     _description = 'Easy Search Config'
 
-    model_id = fields.Many2one(comodel_name="ir.model", string="Model Name", required=True, )
+    model_id = fields.Many2one(comodel_name="ir.model", ondelete="set default", string="Model Name", required=True, )
     field_ids = fields.Many2many(comodel_name="ir.model.fields", string="Fields To Used In Search", required=True)
     type = fields.Selection(string="Type",
                             selection=[
