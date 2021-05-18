@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sale_comercial.note_email_template" model="mail.template">
+            <field name="name">Envíar Presupuesto Comercial o Documento por correo electrónico</field>
+            <field name="subject">Enviar Presupuesto Comercial - ${object.number}</field>
+            <field name="model_id" ref="sale_comercial.model_sale_comercial_note"/>
+            <field name="email_from">${(user.email and '&quot;%s&quot; &lt;%s&gt;' % (user.name, user.email) or '')|safe}</field>
+            <field name="email_to">${object.client_id.email}</field>
+            <field name="report_template" ref="sale_comercial.action_report_note"/>
+            <field name="report_name">Presupuesto Comercial - ${object.number}</field>
+            <field name="auto_delete" eval="True"/>
+            <field name="user_signature" eval="False"/>
+            <field name="body_html">
+                <![CDATA[
+                <div>
+                    <p>Estimado ${object.client_id.name}</p>
+                    <p>
+                        La presente es para hacerle llegar el Presupuesto Comercial ${object.number} 
+                    </p>
+                    <p>Atentamente,</p>
+                    <p>${object.write_uid.name}</p>
+                </div>
+                ]]>
+            </field>
+        </record>
+    </data>
+    <data>
+        <template id="sale_comercial.note_email_notification">
+            <table border="0" cellpadding="0" cellspacing="0" style="padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;">
+                <tr>
+                    <td align="center">
+                        <table border="0" cellpadding="0" cellspacing="0" width="590" style="padding: 24px; background-color: white; color: #454748; border-collapse:separate;">
+                            <tbody>
+                                <!-- HEADER -->
+                                <tr>
+                                    <td align="center" style="min-width: 590px;">
+                                        <t t-set="access_action" t-value="record.with_context(force_website=True).get_access_action()"/>
+                                        <t t-set="is_online" t-value="access_action and access_action['type'] == 'ir.actions.act_url'"/>
+                                        <t t-set="access_url" t-value="is_online and record._get_share_url(redirect=True, signup_partner=True) or ''"/>
+                                        <t t-set="access_name">
+                                            Vista <t t-esc="model_description or 'document'"/>
+                                        </t>
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:white;padding:0;border-collapse:separate;">
+                                            <tr>
+                                                <td valign="middle">
+                                                    <span style="font-size: 10px;">Tu <t t-esc="model_description or 'document'"/></span><br/>
+                                                    <span style="font-size: 20px; font-weight: bold;">
+                                                        <t t-esc="message.record_name"/>
+                                                    </span>
+                                                </td>
+                                                <td valign="middle" align="right">
+                                                    <img t-att-src="'/logo.png?company=%s' % company.id" style="padding: 0px; margin: 0px; height: 48px;" t-att-alt="'%s' % company.name"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="text-align:center;">
+                                                    <hr width="100%" style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin:4px 0px 32px 0px;"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- CONTENT -->
+                                <tr>
+                                    <td style="padding: 0">
+                                        <t t-raw="message.body"/>
+                                    </td>
+                                </tr>
+                                <!-- FOOTER -->
+                                <tr>
+                                    <td style="padding: 0; font-size:11px;">
+                                        <hr width="100%" style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 32px 0px 4px 0px;"/>
+                                        <b t-esc="company.name"/><br/>
+                                        <div style="color: #999999">
+                                            <t t-esc="company.phone"/>
+                                            <t t-if="company.email"> |
+                                                <a t-att-href="'mailto:%s' % company.email" style="text-decoration:none; color: #999999;">
+                                                    <t t-esc="company.email"/>
+                                                </a>
+                                            </t>
+                                            <t t-if="company.website"> |
+                                                <a t-att-href="'%s' % company.website" style="text-decoration:none; color: #999999;">
+                                                    <t t-esc="company.website"/>
+                                                </a>
+                                            </t>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!-- POWERED BY -->
+                <tr>
+                    <td align="center" style="min-width: 590px; padding: 8px; font-size:11px;">
+                        Powered by <a target="_blank" href="https://www.odoo.com?utm_source=db&amp;utm_medium=email" style="color: #875A7B;">Odoo</a>
+                    </td>
+                </tr>
+            </table>
+        </template>
+    </data>
+</odoo>

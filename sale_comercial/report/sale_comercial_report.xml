@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            id="sale_comercial.action_report_note"
+            string="Nota o Documento"
+            model="sale_comercial.note" 
+            report_type="qweb-pdf"
+            file="sale_comercial.note_report" 
+            name="sale_comercial.note_report"
+            print_report_name="'Presupuesto Comercial - %s' % (object.number)"
+        />
+    </data>
+</odoo>
