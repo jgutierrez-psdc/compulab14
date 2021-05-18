@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record id="sale_comercial_manager" model="res.groups">
+            <field name="name">Crear / Editar / Borrar Notas a Proyectos</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
         <record id="sale_comercial_user" model="res.groups">
             <field name="name">Usar Módulo de Propuesta Comercial</field>
             <field name="category_id" ref="base.module_category_hidden"/>
