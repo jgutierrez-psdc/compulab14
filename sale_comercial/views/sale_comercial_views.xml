@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record
+            id='sale_comercial.note_form' model='ir.ui.view'>
+            <field name='name'>sale_comercial.note.form</field>
+            <field name='model'>sale_comercial.note</field>
+            <field name='arch' type='xml'>
+                <form>
+                    <header>
+                        <button name="action_validate" string="CONFIRMAR" type="object" states="draft" class="btn-primary" groups="sale_comercial.sale_comercial_validate_notes_user" />
+                        <button name="action_print" string="IMPRIMIR" type="object" states="validated,sent" class="btn-primary" groups="sale_comercial.sale_comercial_print_notes_user" />
+                        <button name="action_send" string="ENVIAR POR CORREO ELECTRÓNICO" type="object" states="validated,print" class="btn-primary" groups="sale_comercial.sale_comercial_send_notes_user" />
+                        <button name="action_cancel" string="CANCELAR" type="object" states="validated,print,sent" groups="sale_comercial.sale_comercial_cancel_notes_user" />
+                        <button name="action_draft" string="CONVERTIR EN BORRADOR" type="object" states="canceled" groups="sale_comercial.sale_comercial_cancel_notes_user" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,validated,print,sent,canceled" />
+                    </header>
+                    <sheet>
+                        <div>
+                            <h1 class="mt0">
+                                <field name="number" readonly="1" class="oe_inline"/>
+                            </h1>
+                        </div>
+                        <group name="header_info">
+                            <group>
+                                <field name='name'/>
+                                <field name='date'/>
+                                <field name='client_id' options="{ 'no_create': True, 'no_open': True }" required="1"/>
+                            </group>
+                        </group>
+                        <group name="document_info">
+                            <field name='body' widget="html" required="1" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record
+            id='sale_comercial.note_tree' model='ir.ui.view'>
+            <field name='name'>sale_comercial.note.tree</field>
+            <field name='model'>sale_comercial.note</field>
+            <field name='arch' type='xml'>
+                <tree>
+                    <field name="number"/>
+                    <field name="name"/>
+                    <field name="client_id"/>
+                    <field name="write_uid"/>
+                    <field name='write_date'/>
+                </tree>
+            </field>
+        </record>
+        <record
+            id='sale_comercial.note_search' model='ir.ui.view'>
+            <field name='name'>sale_comercial.note.search</field>
+            <field name='model'>sale_comercial.note</field>
+            <field name='arch' type='xml'>
+                <search>
+                    <field name="number"/>
+                    <field name="name"/>
+                    <field name="client_id"/>
+                    <field name="write_uid"/>
+                    <field name='write_date'/>
+                </search>
+            </field>
+        </record>
+        <record
+            id="sale_comercial.note_permissions_form" model="ir.ui.view">
+            <field name='name'>sale_comercial.note.permissions.form</field>
+            <field name='model'>sale_comercial.note</field>
+            <field name='inherit_id' ref="sale_comercial.note_form" />
+            <field name='groups_id' eval="[(4,ref('sale_comercial.sale_comercial_user')),]" />
+            <field name="arch" type="xml">
+                <xpath expr="/form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record
+            id="sale_comercial.note_permissions_tree" model="ir.ui.view">
+            <field name='name'>sale_comercial.note.permissions.tree</field>
+            <field name='model'>sale_comercial.note</field>
+            <field name='inherit_id' ref="sale_comercial.note_tree" />
+            <field name='groups_id' eval="[(4,ref('sale_comercial.sale_comercial_user')),]" />
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record
+            id='sale_comercial.note_window' model='ir.actions.act_window'>
+            <field name='name'>Propuesta Comercial</field>
+            <field name='res_model'>sale_comercial.note</field>
+            <field name='view_type'>form</field>
+            <field name='view_mode'>tree,form,search</field>
+        </record>
+        <menuitem
+            id="sale_comercial.root_menu"
+            name="Propuesta Comercial"
+            groups="sale_comercial_manager,sale_comercial_user"
+            web_icon="sale_comercial,static/description/icon.png"
+            sequence="31" />
+        <menuitem
+            id='sale_comercial.root_notes_list'
+            name='Propuesta Comercial'
+            parent='sale_comercial.root_menu'
+            sequence="0" />
+        <menuitem
+            id='sale_comercial.notes_list'
+            name='Lista de Notas'
+            parent='sale_comercial.root_notes_list'
+            sequence="0"
+            action='sale_comercial.note_window' />
+    </data>
+</odoo>
