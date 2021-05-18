@@ -100,12 +100,12 @@
             <field name='res_model'>sale_comercial.note</field>
             <field name='view_mode'>tree,form,search</field>
         </record>
-        <!--<menuitem
+        <menuitem
             id="sale_comercial.root_menu"
             name="Propuesta Comercial"
             groups="sale_comercial_manager,sale_comercial_user"
             web_icon="sale_comercial,static/description/icon.png"
-            sequence="31" />-->
+            sequence="31" />
         <menuitem
             id='sale_comercial.root_notes_list'
             name='Propuesta Comercial'
