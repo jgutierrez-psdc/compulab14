@@ -1,2 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_sale_comercial_sale_comercial,sale_comercial.sale_comercial,model_sale_comercial_sale_comercial,,1,0,0,0
+access_sale_comercial_manager,sale_comercial.note.manager,model_sale_comercial_note,sale_comercial_manager,1,1,1,1
+access_sale_comercial_validate_notes_user,sale_comercial.note.validate.notes.user,model_sale_comercial_note,sale_comercial_validate_notes_user,0,1,0,0
+access_sale_comercial_cancel_notes_user,sale_comercial.note.cancel.notes.user,model_sale_comercial_note,sale_comercial_cancel_notes_user,0,1,0,0
+access_sale_comercial_print_notes_user,sale_comercial.note.print.notes.user,model_sale_comercial_note,sale_comercial_print_notes_user,0,1,0,0
+access_sale_comercial_send_notes_user,sale_comercial.note.send.notes.user,model_sale_comercial_note,sale_comercial_send_notes_user,0,1,0,0
+access_sale_comercial_user,sale_comercial.note.user,model_sale_comercial_note,sale_comercial_user,1,0,0,0

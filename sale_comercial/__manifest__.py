@@ -1,31 +1,23 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "sale_comercial",
-
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
-    'description': """
-        Long description of module's purpose
+    "name": "Propuesta Comercial",
+    "summary": "Módulo para la creaciones de propuestas comerciales",
+    "description": """
+        Módulo para la creaciones de propuestas comerciales.
     """,
-
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
-
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
-
-    # always loaded
-    'data': [
-        #'security/ir.model.access.csv',
+    "author": "PSDC Innova",
+    "website": "https://psdc.com.pa/",
+    "category": "Projects",
+    "version": "1.1.0",
+    "depends": ['base', 'contacts', 'mail'],
+    "data": [
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'data/sale_comercial_sequence.xml',
         'views/sale_comercial_views.xml',
+        'report/sale_comercials_report.xml',
+        'report/sale_comercials_report_templates.xml',
+        'data/mail_template_data.xml',
     ],
     'qweb': [],
     "demo": [],
