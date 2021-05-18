@@ -7,8 +7,8 @@
     """,
     "author": "PSDC Innova",
     "website": "https://psdc.com.pa/",
-    "category": "Projects",
-    "version": "1.1.0",
+    "category": "Administration",
+    "version": "1.0.0",
     "depends": ['base', 'contacts', 'mail'],
     "data": [
         'security/security.xml',
