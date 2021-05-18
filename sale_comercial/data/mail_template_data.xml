@@ -10,7 +10,6 @@
             <field name="report_template" ref="sale_comercial_report_id"/>
             <field name="report_name">Presupuesto Comercial - ${object.number}</field>
             <field name="auto_delete" eval="True"/>
-            <field name="user_signature" eval="False"/>
             <field name="body_html">
                 <![CDATA[
                 <div>
