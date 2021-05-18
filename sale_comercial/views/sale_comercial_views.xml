@@ -98,7 +98,6 @@
             id='sale_comercial.note_window' model='ir.actions.act_window'>
             <field name='name'>Propuesta Comercial</field>
             <field name='res_model'>sale_comercial.note</field>
-            <field name='view_type'>form</field>
             <field name='view_mode'>tree,form,search</field>
         </record>
         <menuitem
