@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <report 
-            id="sale_comercial.action_report_note"
+            id="sale_comercial_report_id"
             string="Nota o Documento"
             model="sale_comercial.note" 
             report_type="qweb-pdf"
