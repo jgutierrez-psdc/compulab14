@@ -7,7 +7,7 @@
             <field name="model_id" ref="sale_comercial.model_sale_comercial_note"/>
             <field name="email_from">${(user.email and '&quot;%s&quot; &lt;%s&gt;' % (user.name, user.email) or '')|safe}</field>
             <field name="email_to">${object.client_id.email}</field>
-            <field name="report_template" ref="sale_comercial.action_report_note"/>
+            <field name="report_template" ref="sale_comercial_report_id"/>
             <field name="report_name">Presupuesto Comercial - ${object.number}</field>
             <field name="auto_delete" eval="True"/>
             <field name="user_signature" eval="False"/>

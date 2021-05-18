@@ -56,7 +56,7 @@ class Note(models.Model):
 
     def action_print(self):
         self.write({'state': 'print'})
-        return self.env.ref('sale_comercial.action_report_note').report_action(self)
+        return self.env.ref('sale_comercial_report_id').report_action(self)
 
     def action_send(self):
         self.ensure_one()
