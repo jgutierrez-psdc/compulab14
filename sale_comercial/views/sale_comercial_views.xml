@@ -103,7 +103,7 @@
         <menuitem
             id="sale_comercial.root_menu"
             name="Propuesta Comercial"
-            groups="sale_comercial_manager,sale_comercial_user"
+            groups="sale_comercial_user"
             web_icon="sale_comercial,static/description/icon.png"
             sequence="31" />
         <menuitem
