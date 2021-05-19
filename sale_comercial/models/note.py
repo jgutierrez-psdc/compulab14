@@ -15,7 +15,6 @@ EMPTY_SEQUENCE = 'Borrador'
 NOTE_STATES_LIST = [
     ('draft', 'Borrador'),
     ('validated','Confirmado'),
-    ('print', 'Impreso'),
     ('sent', 'Enviado por correo electrónico'),
     ('canceled', 'Cancelado')
 ]
@@ -54,10 +53,6 @@ class Note(models.Model):
 
     def action_validate(self):
         return self.write({'state': 'validated'})
-
-    #def action_print(self):
-    #    self.write({'state': 'print'})
-    #    return self.env.ref('sale_comercial_report_id').report_action(self)
 
     def action_send(self):
         self.ensure_one()
