@@ -35,6 +35,7 @@ class Note(models.Model):
         default=lambda self: EMPTY_SEQUENCE)
     state = fields.Selection(
         NOTE_STATES_LIST,
+        string="Estado",
         default='draft',
         track_visibility='onchange')
     name = fields.Char(
@@ -54,9 +55,9 @@ class Note(models.Model):
     def action_validate(self):
         return self.write({'state': 'validated'})
 
-    def action_print(self):
-        self.write({'state': 'print'})
-        return self.env.ref('sale_comercial_report_id').report_action(self)
+    #def action_print(self):
+    #    self.write({'state': 'print'})
+    #    return self.env.ref('sale_comercial_report_id').report_action(self)
 
     def action_send(self):
         self.ensure_one()
