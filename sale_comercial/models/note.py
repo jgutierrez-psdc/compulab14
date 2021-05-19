@@ -89,7 +89,8 @@ class Note(models.Model):
 
     def action_draft(self):
         return self.write({'state': 'draft'})
-
+    
+    @api.model
     def create(self, vals):
         vals['number'] = self.env['ir.sequence'].next_by_code('sale_comercial') or EMPTY_SEQUENCE
         eo = TAG_RE.sub('', vals['body']) if vals['body'] else None
