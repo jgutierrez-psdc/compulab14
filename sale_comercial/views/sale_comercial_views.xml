@@ -75,9 +75,9 @@
             <field name='groups_id' eval="[(4,ref('sale_comercial.sale_comercial_user')),]" />
             <field name="arch" type="xml">
                 <xpath expr="/form" position="attributes">
-                    <attribute name="create">false</attribute>
-                    <attribute name="edit">false</attribute>
-                    <attribute name="delete">false</attribute>
+                    <attribute name="create">True</attribute>
+                    <attribute name="edit">True</attribute>
+                    <attribute name="delete">True</attribute>
                 </xpath>
             </field>
         </record>
@@ -89,8 +89,8 @@
             <field name='groups_id' eval="[(4,ref('sale_comercial.sale_comercial_user')),]" />
             <field name="arch" type="xml">
                 <xpath expr="/tree" position="attributes">
-                    <attribute name="create">false</attribute>
-                    <attribute name="delete">false</attribute>
+                    <attribute name="create">True</attribute>
+                    <attribute name="delete">True</attribute>
                 </xpath>
             </field>
         </record>
