@@ -3,12 +3,12 @@
     <template id="sale_comercial.note_report_document">
         <t t-call="web.external_layout">
             <t t-set="doc" t-value="doc.with_context({'lang':doc.client_id.lang})" />
-            <div class="page">
+            <div style="page-break-before: always;" class="page">
                 <h1>
                     <span t-raw="doc.name"/>
                 </h1>
             </div>
-            <div class="page">
+            <div style="page-break-before: always;" class="page">
                 <div class="oe_structure"/>
                 <div class="clearfix">
                     <div class="col-xs-12">
