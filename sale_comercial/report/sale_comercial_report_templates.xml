@@ -19,26 +19,26 @@
                 <div class="clearfix">
                     <div class="col-xs-12">
                         <h2>Propuesta Comercial</h2>
-                        <h2>Cliente: <span t-raw="doc.client_id"/></h2>
-                        <p style="text-align: justify;">
-                            <strong>Acuerdo de confidencialidad</strong>
+                        <h3>Cliente: <span t-raw="doc.client_id.name"/></h3>
+                        <p style="text-align: justify; font-size: 14px;">
+                            <strong>Acuerdo de confidencialidad</strong><br></br>
                             Por razones de índole comercial, puede resultar en perjuicio de Compulab, S.A., que las ideas,
                             conceptos, precios, aplicaciones, planes de entrega y en general las soluciones contenidas en este
                             informe sean conocidas por personas distintas a aquellas a quienes está dirigida.
                             Toda la información contenida en la presente propuesta es propiedad de Compulab, S.A. y de
-                            Credicorp Bank.
+                            <span t-raw="doc.client_id.name"/>.
+                            <br></br>
                             La información contenida en este documento es confidencial y no debe ser revelada a ninguna
-                            persona fuera de Compulab, S.A. y Credicorp Bank. sin autorización previa. Ninguna parte de esta
+                            persona fuera de Compulab, S.A. y <span t-raw="doc.client_id.name"/>. sin autorización previa. Ninguna parte de esta
                             publicación debe ser reproducida, transmitida, copiada, almacenada o traducida a ningún lenguaje,
                             en ningún tipo de medio electrónico, mecánico, magnético, óptico, manual o de otra forma sin la
-                            debida autorización escrita de Compulab, S.A. y Credicorp Bank
+                            debida autorización escrita de Compulab, S.A. y <span t-raw="doc.client_id.name"/>
                             Ninguna parte de esta publicación debe ser revelada, duplicado, usado o publicado total o
-                            parcialmente, fuera de su organización sin la autorización escrita de Compulab S.A. y Credicorp Bank
-
-                            A su vez, Credicorp Bank se compromete a regirse conforme a las leyes panameñas relativas a la
+                            parcialmente, fuera de su organización sin la autorización escrita de Compulab S.A. y <span t-raw="doc.client_id.name"/>
+                            <br></br>
+                            A su vez, <span t-raw="doc.client_id.name"/> se compromete a regirse conforme a las leyes panameñas relativas a la
                             protección de autoría intelectual y confidencialidad de la información.
                         </p>
-                        <span t-raw="doc.body"/>
                     </div>
                 </div>
                 <div class="oe_structure"/>
