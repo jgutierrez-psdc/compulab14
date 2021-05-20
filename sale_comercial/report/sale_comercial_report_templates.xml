@@ -4,9 +4,12 @@
         <t t-call="web.external_layout">
             <t t-set="doc" t-value="doc.with_context({'lang':doc.client_id.lang})" />
             <div style="page-break-before: always;" class="page">
-                <h1>
-                    <span t-raw="doc.name"/>
-                </h1>
+                <div class="center-text" style="width: 50%; text-align: center;">
+                    <h1>PROPUESTA COMERCIAL</h1>
+                    <h2>
+                        <span t-raw="doc.name"/>
+                    </h2>
+                </div>
             </div>
             <div style="page-break-before: always;" class="page">
                 <div class="oe_structure"/>
