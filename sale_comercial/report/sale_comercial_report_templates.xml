@@ -3,8 +3,8 @@
     <template id="sale_comercial.note_report_document">
         <t t-call="web.external_layout">
             <t t-set="doc" t-value="doc.with_context({'lang':doc.client_id.lang})" />
-            <div style="page-break-before: always;" class="page">
-                <div class="center-text" style="display: flex; justify-content: center; align-items: center;">
+            <div style="page-break-before: always; display: flex; justify-content: center; align-items: center;">
+                <div class="center-text">
                     <h1>PROPUESTA COMERCIAL</h1>
                     <h2>
                         <span t-raw="doc.name"/>
