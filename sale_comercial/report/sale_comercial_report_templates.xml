@@ -2,9 +2,12 @@
 <odoo>
     <template id="sale_comercial.note_report_document">
         <t t-call="web.external_layout">
-            <t t-set="doc" t-value="doc.with_context({'lang':doc.client_id.lang})" />
+            <t t-set="doc" t-value="doc.with_context({'lang':doc.client_id.lang})"/>
             <div class="page" style="page-break-before: always;">
-                <div style="width: 100%; text-align: center; margin-top: 50%;">
+                <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+                <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+                <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+                <div style="width: 100%; top: 400px; text-align: center;">
                     <h1>PROPUESTA COMERCIAL</h1>
                     <h2>
                         <span t-raw="doc.name"/>
@@ -15,6 +18,26 @@
                 <div class="oe_structure"/>
                 <div class="clearfix">
                     <div class="col-xs-12">
+                        <h2>Propuesta Comercial</h2>
+                        <h2>Cliente: <span t-raw="doc.client_id"/></h2>
+                        <p style="text-align: justify;">
+                            <strong>Acuerdo de confidencialidad</strong>
+                            Por razones de índole comercial, puede resultar en perjuicio de Compulab, S.A., que las ideas,
+                            conceptos, precios, aplicaciones, planes de entrega y en general las soluciones contenidas en este
+                            informe sean conocidas por personas distintas a aquellas a quienes está dirigida.
+                            Toda la información contenida en la presente propuesta es propiedad de Compulab, S.A. y de
+                            Credicorp Bank.
+                            La información contenida en este documento es confidencial y no debe ser revelada a ninguna
+                            persona fuera de Compulab, S.A. y Credicorp Bank. sin autorización previa. Ninguna parte de esta
+                            publicación debe ser reproducida, transmitida, copiada, almacenada o traducida a ningún lenguaje,
+                            en ningún tipo de medio electrónico, mecánico, magnético, óptico, manual o de otra forma sin la
+                            debida autorización escrita de Compulab, S.A. y Credicorp Bank
+                            Ninguna parte de esta publicación debe ser revelada, duplicado, usado o publicado total o
+                            parcialmente, fuera de su organización sin la autorización escrita de Compulab S.A. y Credicorp Bank
+
+                            A su vez, Credicorp Bank se compromete a regirse conforme a las leyes panameñas relativas a la
+                            protección de autoría intelectual y confidencialidad de la información.
+                        </p>
                         <span t-raw="doc.body"/>
                     </div>
                 </div>
