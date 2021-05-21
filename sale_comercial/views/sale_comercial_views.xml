@@ -26,9 +26,23 @@
                                 <field name='date'/>
                                 <field name='client_id' options="{ 'no_create': True, 'no_open': True }" required="1"/>
                             </group>
+                            <group>
+                                <field name='contact'/>
+                                <field name='contact_mail'/>
+                                <field name='contact_tel'/>
+                            </group>
                         </group>
-                        <group name="document_info">
+                        <group name="intro_info">
                             <field name='body' widget="html" required="1" />
+                        </group>
+                        <group name="pc_info">
+                            <field name='body_pc' widget="html" required="1" />
+                        </group>
+                        <group name="ap_info">
+                            <field name='body_ap' widget="html" required="1" />
+                        </group>
+                        <group name="rc_info">
+                            <field name='body_rc' widget="html" required="1" />
                         </group>
                     </sheet>
                     <div class="oe_chatter">

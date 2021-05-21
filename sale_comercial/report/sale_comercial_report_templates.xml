@@ -55,6 +55,54 @@
                   </div>
                 <div class="oe_structure"/>
             </div>
+            <div class="page" style="page-break-before: always;">
+                <div class="oe_structure"/>
+                  <div class="col-12">
+                      <h2>2. Perfil operativo</h2>
+                      <br></br>
+                      <p style="text-align: justify; font-size: 14px;">
+                        <strong>Breve Historia</strong><br/><br></br>
+                        <strong>COMPULAB, S.A.,</strong> es una Empresa Panameña fundada desde 1993 dedicando a más de 26 años
+                        continuos a la venta de productos tecnológicos y ofreciendo servicios en el país. Esta vasta
+                        experiencia que llevamos en el mercado se transforma en un valor agregado para los clientes que
+                        nos brindan la oportunidad de ofrecer nuestros productos y servicios, ya que tienen la seguridad
+                        que sus inversiones serán respaldadas con seriedad por profesionales con experiencia que laboran
+                        en la empresa.
+                        <br/><br></br>
+                        Desde 1996, somos Distribuidores Autorizados de equipos con marca <strong>DELL</strong> y hasta la fecha, hemos
+                        estado ofreciendo Soluciones Empresariales en todos los segmentos del mercado Informático
+                        Nacional, convirtiéndonos hoy en día gracias a la confianza de nuestros clientes, en una de las
+                        empresas líderes en este campo.
+                        <br/><br></br>
+                        Debido al gran éxito alcanzado, hemos invertido en nuestra organización de Servicio al Cliente con
+                        personal calificado, herramientas y repuestos para asegurar el compromiso con nuestros clientes
+                        honrándoles la garantía de sus equipos y después de la garantía ofreciéndoles Contratos de
+                        Mantenimiento o simplemente reparando sus equipos.
+                      </p>
+                  </div>
+                <div class="oe_structure"/>
+            </div>
+            <div class="page" style="page-break-before: always;">
+                <div class="oe_structure"/>
+                  <div class="col-12">
+                      <h2>3. Descripción de los servicios a ser entregados</h2>
+                      <br></br>
+                      <p style="text-align: justify; font-size: 14px;">
+                        <strong>a. Ubicación del Cliente</strong><br></br>
+                        <span t-raw="doc.client_id.name"/>, <span t-raw="doc.client_id.street"/>.<br></br>
+                        <strong>b. Contacto del Cliente</strong><br></br>
+                        <span t-raw="doc.contact"/> Correo electrónico: <span t-raw="doc.contact_mail"/><br></br>
+                        Teléfono: <span t-raw="doc.contact_tel"/><br></br>
+                        <strong>c. Progamación de Proyecto y Calendario</strong><br></br>
+                        <span t-raw="doc.body_pc"/><br></br>
+                        <strong>d. Alcance del proyecto</strong><br></br>
+                        <span t-raw="doc.body_ap"/><br></br>
+                        <strong>d. Requerimientos del Cliente</strong><br></br>
+                        <span t-raw="doc.body_rc"/><br></br>
+                      </p>
+                  </div>
+                <div class="oe_structure"/>
+            </div>
         </t>
     </template>
     <template id="sale_comercial.note_report">

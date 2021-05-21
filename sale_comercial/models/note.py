@@ -48,7 +48,25 @@ class Note(models.Model):
         string='Cliente',
         required=True)
     body = fields.Text(
-        string='Contenido',
+        string='Introducción',
+        required=True)
+    contact = fields.Char(
+        string='Nombre del cliente',
+        required=True)
+    contact_mail = fields.Char(
+        string='Correo electronico',
+        required=True)
+    contact_tel = fields.Char(
+        string='Teléfono',
+        required=True)
+    body_pc = fields.Text(
+        string='Programación de Proyecto y Calendario',
+        required=True)
+    body_ap = fields.Text(
+        string='Alcance del proyecto',
+        required=True)
+    body_rc = fields.Text(
+        string='Requerimientos del Cliente',
         required=True)
 
     def action_validate(self):
