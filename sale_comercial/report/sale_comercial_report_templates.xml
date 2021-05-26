@@ -116,8 +116,8 @@
                   <div class="col-12">
                     <h2>9. Personal a cargo del proyecto</h2><br></br>
                     <p style="text-align: justify; font-size: 14px;">
-                    <strong>Ing. Preventa: </strong><span t-raw="doc.user_id.name"/>       Correo electrónico: <span t-raw="doc.user_id.login"/><br></br>
-                    <h2>10. Personal a cargo del proyecto</h2><br></br>
+                    <strong>Ing. Preventa: </strong><span t-raw="doc.user_id.name"/>        <strong>Correo electrónico: </strong><span t-raw="doc.user_id.login"/><br></br>
+                    <h2>10. Propuesta Económica de Implementación</h2><br></br>
                     </p>
                   </div>
                 <div class="oe_structure"/>
