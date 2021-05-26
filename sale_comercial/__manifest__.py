@@ -9,7 +9,7 @@
     "website": "https://psdc.com.pa/",
     "category": "Administration",
     "version": "1.0.0",
-    "depends": ['base', 'contacts', 'mail', 'sale'],
+    "depends": ['base', 'contacts', 'mail', 'sale', 'account'],
     "data": [
         'security/security.xml',
         'security/ir.model.access.csv',
