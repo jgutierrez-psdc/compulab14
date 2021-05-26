@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from typing_extensions import Required
 from odoo import models, fields, api, osv, tools
 from openerp.tools.translate import _
 from odoo.exceptions import UserError, ValidationError, Warning
@@ -67,6 +68,29 @@ class Note(models.Model):
         required=True)
     body_rc = fields.Text(
         string='Requerimientos del Cliente',
+        required=True)
+    body_su = fields.Text(
+        string='Supuesto',
+        required=True)
+    body_anc = fields.Text(
+        string='Alcances no contemplados',
+        required=True)
+    body_tc = fields.Text(
+        string='Transferencia de conocimientos',
+        required=True)
+    body_sg = fields.Text(
+        string='Soporte y garantía',
+        required=True)
+    body_cap = fields.Text(
+        string='Capacitación',
+        required=True)
+    sale_id = fields.Many2one(
+        'sale.order',
+        string="Presupuesto",
+        required=True)
+    user_id = fields.Many2one(
+        'res.users',
+        string="Persona a cargo",
         required=True)
 
     def action_validate(self):
