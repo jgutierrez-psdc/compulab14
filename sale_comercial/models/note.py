@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from typing_extensions import Required
 from odoo import models, fields, api, osv, tools
 from openerp.tools.translate import _
 from odoo.exceptions import UserError, ValidationError, Warning
@@ -91,7 +90,8 @@ class Note(models.Model):
     user_id = fields.Many2one(
         'res.users',
         string="Persona a cargo",
-        required=True)
+        required=True
+    )
 
     def action_validate(self):
         return self.write({'state': 'validated'})
