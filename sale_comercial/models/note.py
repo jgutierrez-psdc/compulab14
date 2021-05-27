@@ -90,8 +90,10 @@ class Note(models.Model):
     user_id = fields.Many2one(
         'res.users',
         string="Persona a cargo",
-        required=True
-    )
+        required=True)
+    body_bh = fields.Text(
+        string='Perfil Operativo',
+        required=True)
 
     def action_validate(self):
         return self.write({'state': 'validated'})

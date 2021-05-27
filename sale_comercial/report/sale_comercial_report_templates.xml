@@ -62,23 +62,8 @@
                     <br></br>
                     <p style="text-align: justify; font-size: 14px;">
                     <strong>Breve Historia</strong><br/><br></br>
-                    <strong>COMPULAB, S.A.,</strong> es una Empresa Panameña fundada desde 1993 dedicando a más de 26 años
-                    continuos a la venta de productos tecnológicos y ofreciendo servicios en el país. Esta vasta
-                    experiencia que llevamos en el mercado se transforma en un valor agregado para los clientes que
-                    nos brindan la oportunidad de ofrecer nuestros productos y servicios, ya que tienen la seguridad
-                    que sus inversiones serán respaldadas con seriedad por profesionales con experiencia que laboran
-                    en la empresa.
-                    <br/><br></br>
-                    Desde 1996, somos Distribuidores Autorizados de equipos con marca <strong>DELL</strong> y hasta la fecha, hemos
-                    estado ofreciendo Soluciones Empresariales en todos los segmentos del mercado Informático
-                    Nacional, convirtiéndonos hoy en día gracias a la confianza de nuestros clientes, en una de las
-                    empresas líderes en este campo.
-                    <br/><br></br>
-                    Debido al gran éxito alcanzado, hemos invertido en nuestra organización de Servicio al Cliente con
-                    personal calificado, herramientas y repuestos para asegurar el compromiso con nuestros clientes
-                    honrándoles la garantía de sus equipos y después de la garantía ofreciéndoles Contratos de
-                    Mantenimiento o simplemente reparando sus equipos.
                     </p>
+                    <span t-raw="doc.body_bh"/><br></br>
                   </div>
                 <div class="oe_structure"/>
             </div>
@@ -126,8 +111,8 @@
                         <thead>
                             <tr>
                                 <th width="11%" class="text-center">Código</th>
-                                <th width="40%" name="th_description" class="text-center">Description</th>
-                                <th width="9%" name="th_quantity" class="text-right">Quantity</th>
+                                <th width="40%" name="th_description" class="text-center">Descripción</th>
+                                <th width="9%" name="th_quantity" class="text-right">Cantidad</th>
                                 <th width="8%" name="th_priceunit" class="text-right">Precio U.</th>
                                 <th name="th_discount" t-if="display_discount" class="text-right" groups="product.group_discount_per_so_line">
                                     <span>Disc.%</span>
@@ -135,7 +120,7 @@
                                 <th width="8%" name="th_taxes" t-if="display_tax" class="text-center">ITBMS</th>
                                 <th width="10%" name="th_subtotal" class="text-right">
                                     <t groups="account.group_show_line_subtotals_tax_excluded">Subtotal</t>
-                                    <t groups="account.group_show_line_subtotals_tax_included">Total Price</t>
+                                    <t groups="account.group_show_line_subtotals_tax_included">Total</t>
                                 </th>
                             </tr>
                         </thead>
@@ -253,10 +238,11 @@
                     </span><br></br>
                     <span t-field="doc.sale_id.note"/>
                     <p id="fiscal_position_remark" t-if="doc.sale_id.fiscal_position_id and doc.sale_id.fiscal_position_id.sudo().note">
-                        <strong>Fiscal Position Remark:</strong>
+                        <strong>Observación de Posición Fiscal:</strong>
                         <span t-field="doc.sale_id.fiscal_position_id.sudo().note"/>
                     </p>
                   </div>
+                  <br></br>
                   <strong>Fecha de la propuesta: <span t-field="doc.date"/></strong>
                 <div class="oe_structure"/>
             </div>

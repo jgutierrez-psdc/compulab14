@@ -37,6 +37,9 @@
                         <group name="intro_info">
                             <field name='body' widget="html" required="1" />
                         </group>
+                        <group name="bh_info">
+                            <field name='body_bh' widget="html" required="1" />
+                        </group>
                         <group name="pc_info">
                             <field name='body_pc' widget="html" required="1" />
                         </group>
