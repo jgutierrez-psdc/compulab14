@@ -257,6 +257,7 @@
                         <span t-field="doc.sale_id.fiscal_position_id.sudo().note"/>
                     </p>
                   </div>
+                  <strong>Fecha de la propuesta: <span t-field="doc.date"/></strong>
                 <div class="oe_structure"/>
             </div>
         </t>
