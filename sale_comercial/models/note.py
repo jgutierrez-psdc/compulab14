@@ -46,9 +46,7 @@ class Note(models.Model):
     client_id = fields.Many2one(
         'res.partner',
         string='Cliente',
-        store=True,
-        required=True,
-        compute='compute_auto_client')
+        required=True)
     body = fields.Text(
         string='Introducción',
         required=True)
@@ -104,10 +102,6 @@ class Note(models.Model):
     body_anexo = fields.Text(
         string='Anexos',
         required=False)
-
-    def compute_auto_client(self):
-        if self.sale_id.partner_id:
-            return self.sale_id.partner_id
 
     def action_validate(self):
         return self.write({'state': 'validated'})

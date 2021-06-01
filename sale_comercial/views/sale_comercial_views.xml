@@ -64,7 +64,7 @@
                             <field name='body_cap' widget="html" required="1" />
                         </group>
                         <group name="cap_info">
-                            <field name='body_anexo' widget="html" required="1" />
+                            <field name='body_anexo' widget="html"/>
                         </group>
                     </sheet>
                     <div class="oe_chatter">
