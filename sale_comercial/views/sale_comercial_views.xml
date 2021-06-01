@@ -8,7 +8,7 @@
             <field name='arch' type='xml'>
                 <form>
                     <header>
-                        <button name="action_validate" string="CONFIRMAR" type="object" states="validated" class="btn-primary" groups="sale_comercial.sale_comercial_validate_notes_user" />
+                        <button name="action_validate" string="CONFIRMAR" type="object" states="sent" class="btn-primary" groups="sale_comercial.sale_comercial_validate_notes_user" />
                         <button name="action_send" string="ENVIAR POR CORREO ELECTRÓNICO" type="object" states="draft" class="btn-primary" groups="sale_comercial.sale_comercial_send_notes_user" />
                         <button name="action_cancel" string="CANCELAR" type="object" states="validated,sent" groups="sale_comercial.sale_comercial_cancel_notes_user" />
                         <button name="action_draft" string="CONVERTIR EN BORRADOR" type="object" states="canceled" groups="sale_comercial.sale_comercial_cancel_notes_user" />
