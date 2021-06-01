@@ -76,11 +76,9 @@
                     <span t-raw="doc.client_id.name"/>, <span t-raw="doc.client_id.street"/>.<br></br>
                     <strong>b. Contacto del Cliente</strong><br></br>
                     <span t-raw="doc.contact"/> Correo electrónico: <span t-raw="doc.contact_mail"/><br></br>Teléfono: <span t-raw="doc.contact_tel"/><br></br>
-                    <strong>c. Progamación de Proyecto y Calendario</strong><br></br>
-                    <span t-raw="doc.body_pc"/><br></br>
-                    <strong>d. Alcance del proyecto</strong><br></br>
+                    <strong>c. Alcance del proyecto</strong><br></br>
                     <span t-raw="doc.body_ap"/><br></br>
-                    <strong>e. Requerimientos del Cliente</strong><br></br>
+                    <strong>d. Requerimientos del Cliente</strong><br></br>
                     <span t-raw="doc.body_rc"/><br></br>
                     <h2>4. Supuesto</h2><br></br>
                     <span t-raw="doc.body_su"/><br></br>
@@ -101,7 +99,9 @@
                   <div class="col-12">
                     <h2>9. Personal a cargo del proyecto</h2><br></br>
                     <p style="text-align: justify; font-size: 14px;">
-                    <strong>Ing. Preventa: </strong><span t-raw="doc.user_id.name"/>        <strong>Correo electrónico: </strong><span t-raw="doc.user_id.login"/><br></br>
+                    <strong>Ejecutivo de Cuenta: </strong><span t-raw="doc.user_id_ec.name"/>        <strong>Correo electrónico: </strong><span t-raw="doc.user_id_ec.login"/><br></br>
+                    <strong>Preventa: </strong><span t-raw="doc.user_id.name"/>        <strong>Correo electrónico: </strong><span t-raw="doc.user_id.login"/><br></br>
+                    <strong>Post Venta: </strong><span t-raw="doc.user_id_pv.name"/>        <strong>Correo electrónico: </strong><span t-raw="doc.user_id_pv.login"/><br></br>
                     <h2>10. Propuesta Económica de Implementación</h2><br></br>
                     </p>
                     <t t-set="display_discount" t-value="any([l.discount for l in doc.sale_id.order_line])"/>
@@ -244,6 +244,17 @@
                   </div>
                   <br></br>
                   <strong>Fecha de la propuesta: <span t-field="doc.date"/></strong>
+                <div class="oe_structure"/>
+            </div>
+            <div class="page" style="page-break-before: always;">
+                <div class="oe_structure"/>
+                  <div class="col-12">
+                      <h2>11. Anexos</h2>
+                      <br></br>
+                      <p style="text-align: justify; font-size: 14px;">
+                          <span t-raw="doc.body_anexo"/>
+                      </p>
+                  </div>
                 <div class="oe_structure"/>
             </div>
         </t>

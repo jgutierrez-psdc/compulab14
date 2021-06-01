@@ -46,21 +46,20 @@ class Note(models.Model):
     client_id = fields.Many2one(
         'res.partner',
         string='Cliente',
-        required=True)
+        store=True,
+        required=True,
+        compute='compute_auto_client')
     body = fields.Text(
         string='Introducción',
         required=True)
     contact = fields.Char(
-        string='Nombre del cliente',
+        string='Nombre de contacto',
         required=True)
     contact_mail = fields.Char(
         string='Correo electronico',
         required=True)
     contact_tel = fields.Char(
         string='Teléfono',
-        required=True)
-    body_pc = fields.Text(
-        string='Programación de Proyecto y Calendario',
         required=True)
     body_ap = fields.Text(
         string='Alcance del proyecto',
@@ -94,6 +93,21 @@ class Note(models.Model):
     body_bh = fields.Text(
         string='Perfil Operativo',
         required=True)
+    user_id_ec = fields.Many2one(
+        'res.users',
+        string="Ejecutivo de Cuenta",
+        required=True)
+    user_id_pv = fields.Many2one(
+        'res.users',
+        string="Post Venta",
+        required=True)
+    body_anexo = fields.Text(
+        string='Anexos',
+        required=False)
+
+    def compute_auto_client(self):
+        if self.sale_id.partner_id:
+            return self.sale_id.partner_id
 
     def action_validate(self):
         return self.write({'state': 'validated'})
