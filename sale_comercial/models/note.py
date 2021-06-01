@@ -14,8 +14,8 @@ EMPTY_SEQUENCE = 'Borrador'
 
 NOTE_STATES_LIST = [
     ('draft', 'Borrador'),
-    ('validated','Confirmado'),
     ('sent', 'Enviado por correo electrónico'),
+    ('validated','Confirmado'),
     ('canceled', 'Cancelado')
 ]
 
