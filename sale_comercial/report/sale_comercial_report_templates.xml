@@ -101,7 +101,10 @@
                     <p style="text-align: justify; font-size: 14px;">
                     <strong>Ejecutivo de Cuenta: </strong><span t-raw="doc.user_id_ec.name"/>        <strong>Correo electrónico: </strong><span t-raw="doc.user_id_ec.login"/><br></br>
                     <strong>Preventa: </strong><span t-raw="doc.user_id.name"/>        <strong>Correo electrónico: </strong><span t-raw="doc.user_id.login"/><br></br>
-                    <strong>Post Venta: </strong><span t-raw="doc.user_id_pv.name"/>        <strong>Correo electrónico: </strong><span t-raw="doc.user_id_pv.login"/><br></br>
+                    <strong>Post Venta: </strong>
+                        <t t-foreach="doc.user_id_pv" t-as="l">
+                            <span t-raw="l.name"/>        <strong>Correo electrónico: </strong><span t-raw="l.login"/><br></br>
+                        </t>
                     <h2>10. Propuesta Económica de Implementación</h2><br></br>
                     </p>
                     <t t-set="display_discount" t-value="any([l.discount for l in doc.sale_id.order_line])"/>
@@ -246,17 +249,19 @@
                   <strong>Fecha de la propuesta: <span t-field="doc.date"/></strong>
                 <div class="oe_structure"/>
             </div>
-            <div class="page" style="page-break-before: always;">
-                <div class="oe_structure"/>
-                  <div class="col-12">
-                      <h2>11. Anexos</h2>
-                      <br></br>
-                      <p style="text-align: justify; font-size: 14px;">
-                          <span t-raw="doc.body_anexo"/>
-                      </p>
-                  </div>
-                <div class="oe_structure"/>
-            </div>
+            <t t-if="doc.body_anexo">
+                <div class="page" style="page-break-before: always;">
+                    <div class="oe_structure"/>
+                    <div class="col-12">
+                        <h2>11. Anexos</h2>
+                        <br></br>
+                        <p style="text-align: justify; font-size: 14px;">
+                            <span t-raw="doc.body_anexo"/>
+                        </p>
+                    </div>
+                    <div class="oe_structure"/>
+                </div>
+            </t>
         </t>
     </template>
     <template id="sale_comercial.note_report">

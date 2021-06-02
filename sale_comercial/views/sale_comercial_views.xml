@@ -33,7 +33,7 @@
                                 <field name='contact_tel'/>
                                 <field name='user_id_ec' options="{ 'no_create': True, 'no_open': False }" required="1"/>
                                 <field name='user_id' options="{ 'no_create': True, 'no_open': False }" required="1"/>
-                                <field name='user_id_pv' options="{ 'no_create': True, 'no_open': False }" required="1"/>
+                                <field name='user_id_pv' options="{ 'no_create': True, 'no_open': False }" widget="many2many_tags" required="1"/>
                             </group>
                         </group>
                         <group name="intro_info">

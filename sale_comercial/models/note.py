@@ -95,7 +95,7 @@ class Note(models.Model):
         'res.users',
         string="Ejecutivo de Cuenta",
         required=True)
-    user_id_pv = fields.Many2one(
+    user_id_pv = fields.Many2many(
         'res.users',
         string="Post Venta",
         required=True)
