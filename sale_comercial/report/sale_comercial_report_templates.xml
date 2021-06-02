@@ -249,6 +249,7 @@
                   <strong>Fecha de la propuesta: <span t-field="doc.date"/></strong>
                 <div class="oe_structure"/>
             </div>
+            
             <t t-if="doc.body_anexo">
                 <div class="page" style="page-break-before: always;">
                     <div class="oe_structure"/>
