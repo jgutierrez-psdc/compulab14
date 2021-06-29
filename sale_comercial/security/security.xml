@@ -7,22 +7,22 @@
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>-->
         <record id="sale_comercial_user" model="res.groups">
-            <field name="name">Usar Módulo de Propuesta Comercial</field>
+            <field name="name">Usar Módulo de Propuesta Comercial (PC)</field>
             <field name="category_id" ref="base.module_category_hidden"/>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
         <record id="sale_comercial_validate_notes_user" model="res.groups">
-            <field name="name">Confirmar Propuesta Comercial</field>
+            <field name="name">Confirmar Propuesta Comercial (PC)</field>
             <field name="category_id" ref="base.module_category_hidden"/>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
         <record id="sale_comercial_cancel_notes_user" model="res.groups">
-            <field name="name">Cancelar Propuesta Comercial</field>
+            <field name="name">Cancelar Propuesta Comercial (PC)</field>
             <field name="category_id" ref="base.module_category_hidden"/>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
         <record id="sale_comercial_send_notes_user" model="res.groups">
-            <field name="name">Envíar Propuesta Comercial por Correo Electrónico</field>
+            <field name="name">Envíar Propuesta Comercial por Correo Electrónico (PC)</field>
             <field name="category_id" ref="base.module_category_hidden"/>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>

@@ -32,38 +32,49 @@
                                 <field name='contact_mail'/>
                                 <field name='contact_tel'/>
                                 <field name='user_id_ec' options="{ 'no_create': True, 'no_open': False }" required="1"/>
-                                <field name='user_id' options="{ 'no_create': True, 'no_open': False }" required="1"/>
-                                <field name='user_id_pv' options="{ 'no_create': True, 'no_open': False }" widget="many2many_tags" required="1"/>
+                                <field name='user_id' options="{ 'no_create': True, 'no_open': False }"/>
+                                <field name='user_id_pv' options="{ 'no_create': True, 'no_open': False }" widget="many2many_tags"/>
                             </group>
                         </group>
                         <group name="intro_info">
-                            <field name='body' widget="html" required="1" />
-                        </group>
-                        <group name="bh_info">
-                            <field name='body_bh' widget="html" required="1" />
+                            <field name='check_body'/>
+                            <field name='body' widget="html"/>
                         </group>
                         <group name="ap_info">
-                            <field name='body_ap' widget="html" required="1" />
+                            <field name='check_body_ap'/>
+                            <field name='body_ap' widget="html"/>
                         </group>
                         <group name="rc_info">
-                            <field name='body_rc' widget="html" required="1" />
+                            <field name='check_body_rc'/>
+                            <field name='body_rc' widget="html"/>
                         </group>
                         <group name="su_info">
-                            <field name='body_su' widget="html" required="1" />
+                            <field name='check_body_su'/>
+                            <field name='body_su' widget="html"/>
                         </group>
                         <group name="anc_info">
-                            <field name='body_anc' widget="html" required="1" />
+                            <field name='check_body_anc'/>
+                            <field name='body_anc' widget="html"/>
                         </group>
                         <group name="tc_info">
-                            <field name='body_tc' widget="html" required="1" />
+                            <field name='check_body_tc'/>
+                            <field name='body_tc' widget="html"/>
                         </group>
                         <group name="sg_info">
-                            <field name='body_sg' widget="html" required="1" />
+                            <field name='check_body_sg'/>
+                            <field name='body_sg' widget="html"/>
                         </group>
                         <group name="cap_info">
-                            <field name='body_cap' widget="html" required="1" />
+                            <field name='check_body_cap'/>
+                            <field name='body_cap' widget="html"/>
                         </group>
-                        <group name="cap_info">
+                        <group name="extra_info">
+                            <field name='check_extra'/>
+                            <field name='extra_text'/>
+                            <field name='body_extra' widget="html"/>
+                        </group>
+                        <group name="anexo_info">
+                            <field name='check_anexo'/>
                             <field name='body_anexo' widget="html"/>
                         </group>
                     </sheet>
@@ -84,7 +95,7 @@
                     <field name="name"/>
                     <field name="client_id"/>
                     <field name="sale_id"/>
-                    <field name="user_id"/>
+                    <field name="user_id_ec"/>
                     <field name="write_uid"/>
                     <field name='write_date'/>
                 </tree>
@@ -100,12 +111,24 @@
                     <field name="name"/>
                     <field name="client_id"/>
                     <field name="sale_id"/>
-                    <field name="user_id"/>
+                    <field name="user_id_ec"/>
                     <field name="write_uid"/>
                     <field name='write_date'/>
                 </search>
             </field>
         </record>
+
+        <record id="view_sale_comercial_filter" model="ir.ui.view">
+            <field name="name">sale.comercial.list.select</field>
+            <field name="model">sale_comercial.note</field>
+            <field name="priority" eval="15"/>
+            <field name="arch" type="xml">
+                <search string="Propuesta Comercial Filtros">
+                    <filter string="Mis Propuestas" domain="[('user_id_ec', '=', uid)]" name="my_sale_comercial_filter"/>
+               </search>
+            </field>
+        </record>
+
         <record
             id="sale_comercial.note_permissions_form" model="ir.ui.view">
             <field name='name'>sale_comercial.note.permissions.form</field>

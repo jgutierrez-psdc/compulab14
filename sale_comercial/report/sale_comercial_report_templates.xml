@@ -8,7 +8,7 @@
                 <br/><br/><br/><br/><br/><br/><br/>
                 <br/><br/><br/><br/><br/><br/><br/>
                 <div style="width: 100%; top: 400px; text-align: center;">
-                    <h1>PROPUESTA COMERCIAL</h1>
+                    <h1>Propuesta Comercial</h1>
                     <h2>
                         <span t-raw="doc.name"/>
                     </h2>
@@ -44,10 +44,11 @@
                   </div>
                 <div class="oe_structure"/>
             </div>
+            <t t-if="doc.check_body">
             <div class="page" style="page-break-before: always;">
                 <div class="oe_structure"/>
                   <div class="col-12">
-                      <h2>1. Introducción</h2>
+                      <h2>Introducción</h2>
                       <br></br>
                       <p style="text-align: justify; font-size: 14px;">
                           <span t-raw="doc.body"/>
@@ -55,57 +56,117 @@
                   </div>
                 <div class="oe_structure"/>
             </div>
+            </t>
             <div class="page" style="page-break-before: always;">
                 <div class="oe_structure"/>
                   <div class="col-12">
-                    <h2>2. Perfil operativo</h2>
+                    <h2>Perfil operativo</h2>
                     <br></br>
                     <p style="text-align: justify; font-size: 14px;">
-                    <strong>Breve Historia</strong><br/><br></br>
+                        <strong>Breve Historia</strong><br/><br></br>
+                        COMPULAB, S.A., es una Empresa Panameña fundada desde 1993 dedicando más de 25 años continuos a la venta de
+                        productos tecnológicos y ofreciendo servicios en el país. Esta vasta experiencia que llevamos en el mercado se
+                        transforma en un valor agregado para los clientes que nos brindan la oportunidad de ofrecer nuestros productos y
+                        servicios, ya que tienen la seguridad que sus inversiones serán respaldadas con seriedad por profesionales con
+                        experiencia que laboran en la empresa.<br></br>
+                        <br></br>
+                        Desde 1996, somos Distribuidores Autorizados de equipos con marca DELL y hasta la fecha,
+                        hemos estado ofreciendo Soluciones Empresariales en todos los segmentos del mercado
+                        Informático Nacional, convirtiéndonos hoy en día gracias a la confianza de nuestros clientes,
+                        en una de las empresas líderes en este campo.<br></br>
+                        <br></br>
+                        Debido al gran éxito alcanzado, hemos invertido en nuestra organización de Servicio al Cliente
+                        con personal calificado, herramientas y repuestos para asegurar el compromiso con nuestros
+                        clientes honrándoles la garantía de sus equipos y después de la garantía ofreciéndoles
+                        Contratos de Mantenimiento o simplemente reparando sus equipos.<br></br>
                     </p>
-                    <span t-raw="doc.body_bh"/><br></br>
                   </div>
                 <div class="oe_structure"/>
             </div>
             <div class="page" style="page-break-before: always;">
                 <div class="oe_structure"/>
                   <div class="col-12">
-                    <h2>3. Descripción de los servicios a ser entregados</h2><br></br>
+                    <h2>Descripción de los servicios a ser entregados</h2><br></br>
                     <p style="text-align: justify; font-size: 14px;">
                     <strong>a. Ubicación del Cliente</strong><br></br>
                     <span t-raw="doc.client_id.name"/>, <span t-raw="doc.client_id.street"/>.<br></br>
-                    <strong>b. Contacto del Cliente</strong><br></br>
-                    <span t-raw="doc.contact"/> Correo electrónico: <span t-raw="doc.contact_mail"/><br></br>Teléfono: <span t-raw="doc.contact_tel"/><br></br>
+                    <strong>b. Datos del Cliente</strong><br></br>
+                    <strong>Contacto: </strong><span t-raw="doc.contact"/><br></br><strong>Correo electrónico: </strong><span t-raw="doc.contact_mail"/><br></br><strong>Teléfono: </strong><span t-raw="doc.contact_tel"/><br></br>
+                    <t t-if="doc.check_body_ap">
                     <strong>c. Alcance del proyecto</strong><br></br>
                     <span t-raw="doc.body_ap"/><br></br>
+                    </t>
+                    <t t-if="doc.check_body_rc">
                     <strong>d. Requerimientos del Cliente</strong><br></br>
                     <span t-raw="doc.body_rc"/><br></br>
-                    <h2>4. Supuesto</h2><br></br>
-                    <span t-raw="doc.body_su"/><br></br>
-                    <h2>5. Alcances no contemplados</h2><br></br>
-                    <span t-raw="doc.body_anc"/><br></br>
-                    <h2>6. Transferencia de conocimientos</h2><br></br>
-                    <span t-raw="doc.body_tc"/><br></br>
-                    <h2>7. Soporte y garantía</h2><br></br>
-                    <span t-raw="doc.body_sg"/><br></br>
-                    <h2>8. Capacitación</h2><br></br>
-                    <span t-raw="doc.body_cap"/><br></br>
-                    </p>  
+                    </t>
+                    </p>
                   </div>
                 <div class="oe_structure"/>
+                <br></br>
             </div>
             <div class="page" style="page-break-before: always;">
                 <div class="oe_structure"/>
                   <div class="col-12">
-                    <h2>9. Personal a cargo del proyecto</h2><br></br>
                     <p style="text-align: justify; font-size: 14px;">
-                    <strong>Ejecutivo de Cuenta: </strong><span t-raw="doc.user_id_ec.name"/>        <strong>Correo electrónico: </strong><span t-raw="doc.user_id_ec.login"/><br></br>
-                    <strong>Preventa: </strong><span t-raw="doc.user_id.name"/>        <strong>Correo electrónico: </strong><span t-raw="doc.user_id.login"/><br></br>
-                    <strong>Post Venta: </strong>
-                        <t t-foreach="doc.user_id_pv" t-as="l">
-                            <span t-raw="l.name"/>        <strong>Correo electrónico: </strong><span t-raw="l.login"/><br></br>
+                    <t t-if="doc.check_body_su">
+                    <h2>Supuestos</h2><br></br>
+                    <span t-raw="doc.body_su"/><br></br>
+                    </t>
+                    <t t-if="doc.check_body_anc">
+                    <h2>Alcances no contemplados</h2><br></br>
+                    <span t-raw="doc.body_anc"/><br></br>
+                    </t>
+                    <t t-if="doc.check_body_tc">
+                    <h2>Transferencia de conocimientos</h2><br></br>
+                    <span t-raw="doc.body_tc"/><br></br>
+                    </t>
+                    </p>  
+                  </div>
+                <div class="oe_structure"/>
+                <br></br>
+            </div>
+            <div class="page" style="page-break-before: always;">
+                <div class="oe_structure"/>
+                  <div class="col-12">
+                    <p style="text-align: justify; font-size: 14px;">
+                    <t t-if="doc.check_body_sg">
+                    <h2>Soporte y garantía</h2><br></br>
+                    <span t-raw="doc.body_sg"/><br></br>
+                    </t>
+                    <t t-if="doc.check_body_cap">
+                    <h2>Capacitación</h2><br></br>
+                    <span t-raw="doc.body_cap"/><br></br>
+                    </t>
+                    <t t-if="doc.check_extra">
+                    <h2><span t-raw="doc.extra_text"/></h2><br></br>
+                    <span t-raw="doc.body_extra"/><br></br>
+                    </t>
+                    </p>  
+                  </div>
+                <div class="oe_structure"/>
+                <br></br>
+            </div>
+            <div class="page" style="page-break-before: always;">
+                <div class="oe_structure"/>
+                  <div class="col-12">
+                    <h2>Personal a cargo del proyecto</h2>
+                    <p style="text-align: justify; font-size: 14px;">
+                    <ul>
+                        <li><strong>Vendedor: <br></br><span t-raw="doc.user_id_ec.name"/></strong><br></br>Correo electrónico: <span t-raw="doc.user_id_ec.login"/><br></br></li>
+                        <t t-if="doc.user_id">
+                        <li><strong>Preventa: <br></br><span t-raw="doc.user_id.name"/></strong><br></br>Correo electrónico: <span t-raw="doc.user_id.login"/><br></br></li>
                         </t>
-                    <h2>10. Propuesta Económica de Implementación</h2><br></br>
+                        <t t-if="doc.user_id_pv">
+                        <li>
+                            <strong>Post Venta: </strong><br></br>
+                            <t t-foreach="doc.user_id_pv" t-as="l">
+                                <strong><span t-raw="l.name"/> </strong><br></br>Correo electrónico: <span t-raw="l.login"/><br></br>
+                            </t>
+                        </li>
+                        </t>
+                    </ul>
+                    <h2>Propuesta Económica</h2><br></br>
                     </p>
                     <t t-set="display_discount" t-value="any([l.discount for l in doc.sale_id.order_line])"/>
                     <t t-set="display_tax" t-value="any([l.tax_id for l in doc.sale_id.order_line])"/>
@@ -249,12 +310,11 @@
                   <strong>Fecha de la propuesta: <span t-field="doc.date"/></strong>
                 <div class="oe_structure"/>
             </div>
-            
-            <t t-if="doc.body_anexo">
+            <t t-if="doc.check_anexo">
                 <div class="page" style="page-break-before: always;">
                     <div class="oe_structure"/>
                     <div class="col-12">
-                        <h2>11. Anexos</h2>
+                        <h2>Anexos</h2>
                         <br></br>
                         <p style="text-align: justify; font-size: 14px;">
                             <span t-raw="doc.body_anexo"/>
