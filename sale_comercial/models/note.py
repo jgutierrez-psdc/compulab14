@@ -176,6 +176,10 @@ class Note(models.Model):
         vals['number'] = self.env['ir.sequence'].next_by_code('sale_comercial') or EMPTY_SEQUENCE
         eo = TAG_RE.sub('', vals['body']) if vals['body'] else None
         eo = eo.replace('&nbsp;', '')
+        ctx = self._context 
+        if ctx.get('active_model') == 'sale.order': 
+            vals['client_id'] = self.env['sale.order'].browse(ctx.get('active_ids')[0]).partner_id.id
+        #vals['client_id'] = self.env['sale.order'].browse('partner_id')
         if not eo:
             raise ValidationError("Debe agregar un contenido al presupuesto comercial.")
         note = super(Note, self).create(vals)
